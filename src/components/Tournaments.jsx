@@ -29,7 +29,7 @@ const tournamentsData = [
     ],
   },
   {
-    title: "Independence Cup 6-a-side Tournament",
+    title: "Independence Cup 6-a-side",
     description: "Held annually to commemorate Independence Day, this prestigious 6-a-side tournament attracts teams from across the region for a day of high-intensity hockey.",
     winners: [
       { year: 2023, men: "Kandy Hockey Club (Men)", women: "Kandy Ladies HC (Women)" },

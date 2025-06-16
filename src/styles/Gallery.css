@@ -11,24 +11,70 @@
   color: #555;
 }
 
-.gallery-placeholder {
+.gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 25px; /* Spacing between gallery items */
 }
 
-.gallery-item-placeholder {
+.gallery-item {
   background-color: var(--card-bg);
-  height: 200px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden; /* Ensures rounded corners */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #aaa;
-  font-style: italic;
-  font-size: 1.2rem;
-  border: 1px dashed var(--border-grey);
+  flex-direction: column; /* Stack image and caption */
+  transition: transform 0.2s ease-in-out; /* Optional hover effect */
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px; /* Fixed height for consistency */
+  object-fit: cover; /* Covers the area without distortion */
+  display: block; /* Removes extra space below image */
+}
+
+.gallery-video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Black background for video thumbnail */
+}
+
+.gallery-video-thumbnail .gallery-image {
+    opacity: 0.7; /* Dim image for play button */
+}
+
+.play-button-overlay {
+    position: absolute;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Allows clicks to pass through to underlying element if present */
+}
+
+.gallery-caption {
+  padding: 15px; /* Padding around the caption text */
+  font-size: 0.95rem;
+  color: var(--dark-text);
+  font-weight: 500;
+  text-align: center;
+  margin-top: auto; /* Pushes caption to the bottom if image size varies */
+  line-height: 1.4;
 }
 
 .gallery-cta {
