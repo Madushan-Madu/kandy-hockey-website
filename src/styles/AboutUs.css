@@ -1,0 +1,47 @@
+/* src/styles/AboutUs.css */
+.about-us-section {
+  padding: 80px 0;
+  background-color: var(--light-grey-bg);
+}
+
+.about-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.about-card {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.about-card h3 {
+  color: var(--primary-green);
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.about-card ul {
+  padding-left: 20px;
+}
+
+.about-card ul li {
+  list-style: disc;
+  margin-bottom: 8px;
+}
+
+.our-history {
+  background-color: var(--card-bg);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.our-history h3 {
+  color: var(--dark-text);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}

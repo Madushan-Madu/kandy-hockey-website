@@ -1,0 +1,77 @@
+/* src/styles/Achievements.css */
+.achievements-section {
+  padding: 80px 0;
+  background-color: var(--light-grey-bg);
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.toggle-buttons .button {
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  border: 2px solid var(--primary-green); /* Default border for toggles */
+  background-color: transparent;
+  color: var(--primary-green);
+  transition: all 0.3s ease;
+}
+
+.toggle-buttons .button-primary { /* When active */
+  background-color: var(--primary-green);
+  color: var(--light-text);
+}
+
+.toggle-buttons .button-primary:hover {
+    background-color: #267345;
+}
+
+.toggle-buttons .button-secondary-outline:hover {
+    background-color: var(--primary-green);
+    color: var(--light-text);
+}
+
+
+.achievements-card {
+  background-color: var(--card-bg);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.achievements-card h3 {
+  color: var(--primary-green);
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.achievements-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.achievement-item h4 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: var(--dark-text);
+}
+
+.achievement-item p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.national-players-note {
+  font-style: italic;
+  color: #555;
+  margin-top: 20px;
+  border-top: 1px solid var(--border-grey);
+  padding-top: 20px;
+}

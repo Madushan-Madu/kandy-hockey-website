@@ -1,0 +1,80 @@
+/* src/styles/Clubs.css */
+.clubs-section {
+  padding: 80px 0;
+  background-color: var(--light-grey-bg);
+}
+
+.clubs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted min-width for more clubs in row if possible */
+  gap: 30px;
+}
+
+.club-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  text-align: center; /* Center content within the card */
+  border-top: 5px solid var(--primary-green); /* Green border at the top, if still desired */
+}
+
+.club-logo-container { /* New container for logo and name */
+  padding: 25px 20px 15px; /* Adjust padding as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9; /* A subtle background for this section of the card */
+  border-bottom: 1px solid var(--border-grey);
+}
+
+.club-logo {
+  width: 80px; /* Adjust size of the logo */
+  height: 80px; /* Make it square */
+  object-fit: contain; /* Ensures logo fits without cropping */
+  margin-bottom: 10px; /* Space between logo and name */
+}
+
+.club-name-under-logo {
+  font-size: 1.4rem; /* Adjust font size as needed */
+  font-weight: 600;
+  color: var(--dark-text); /* Use dark text for club name */
+  margin: 0; /* Remove default h3 margin */
+}
+
+.club-card-body {
+  padding: 20px; /* Slightly less padding than before to fit more */
+}
+
+.club-card-body p {
+  margin-bottom: 8px; /* Slightly less margin */
+  font-size: 0.9rem; /* Slightly smaller font */
+}
+
+.club-description {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Removed:
+.club-championships {
+  font-weight: 600;
+  color: var(--primary-green);
+  margin-bottom: 15px;
+}
+*/
+
+.view-details-link {
+  display: inline-block; /* Make it block for padding if needed */
+  margin-top: 10px; /* Space above the link */
+  color: var(--yellow-button);
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.view-details-link:hover {
+  color: #E6C200;
+}

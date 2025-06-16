@@ -1,0 +1,73 @@
+/* src/styles/Tournaments.css */
+.tournaments-section {
+  padding: 80px 0;
+  background-color: var(--light-grey-bg);
+}
+
+.tournaments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Larger cards for tournament info */
+  gap: 30px;
+}
+
+.tournament-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Ensure content stacks */
+}
+
+.tournament-card-header {
+  background-color: var(--primary-green);
+  padding: 15px 25px;
+  color: var(--light-text);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.tournament-card-body {
+  padding: 25px;
+  flex-grow: 1; /* Allow body to take available space */
+  display: flex;
+  flex-direction: column;
+}
+
+.tournament-description {
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 0.95rem;
+  flex-grow: 1; /* Pushes button to bottom */
+}
+
+.recent-winners-heading {
+  font-weight: 600;
+  color: var(--primary-green);
+  margin-bottom: 10px;
+}
+
+.recent-winners-list {
+  margin-bottom: 20px;
+  padding-left: 0; /* Override default ul padding */
+}
+
+.recent-winners-list li {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.view-full-history-button {
+  margin-top: auto; /* Push button to the bottom of the card */
+  align-self: flex-start; /* Align button to start within its flex container */
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustment for very small screens */
+@media (max-width: 500px) {
+  .tournaments-grid {
+    grid-template-columns: 1fr;
+  }
+}

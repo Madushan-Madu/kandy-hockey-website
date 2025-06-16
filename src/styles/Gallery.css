@@ -1,0 +1,39 @@
+/* src/styles/Gallery.css */
+.gallery-section {
+  padding: 80px 0;
+  background-color: var(--light-grey-bg);
+}
+
+.gallery-intro {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.gallery-placeholder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item-placeholder {
+  background-color: var(--card-bg);
+  height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-style: italic;
+  font-size: 1.2rem;
+  border: 1px dashed var(--border-grey);
+}
+
+.gallery-cta {
+  text-align: center;
+  margin-top: 40px;
+  font-weight: 600;
+  color: var(--primary-green);
+}

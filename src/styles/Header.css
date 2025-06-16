@@ -1,0 +1,45 @@
+/* src/styles/Header.css */
+.header {
+  background-color: var(--card-bg); /* Assuming white/light background for header */
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--primary-green);
+}
+
+.logo img {
+  height: 50px; /* Adjust as needed */
+  margin-right: 10px;
+}
+
+.logo span {
+    line-height: 1.2;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 30px;
+}
+
+.main-nav ul li a {
+  color: var(--dark-text);
+  font-weight: 600;
+  transition: color 0.3s ease;
+  padding: 5px 0; /* Add padding for click area */
+}
+
+.main-nav ul li a:hover {
+  color: var(--primary-green);
+}

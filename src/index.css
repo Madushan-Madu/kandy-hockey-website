@@ -1,0 +1,101 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); /* Example font */
+
+:root {
+  --primary-green: #2E8B57; /* A deep green for major sections */
+  --secondary-green: #3CB371; /* A slightly lighter green */
+  --hero-blue: #3498db; /* Specific for hero as per updated description */
+  --yellow-button: #FFD700;
+  --light-grey-bg: #F8F8F8;
+  --dark-text: #333;
+  --light-text: #FFF;
+  --border-grey: #e0e0e0;
+  --card-bg: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--dark-text);
+  background-color: var(--light-grey-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-green);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--dark-text);
+  padding-top: 40px; /* Add some space above sections */
+}
+
+/* Common button styles */
+.button {
+  display: inline-block;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.button-primary {
+  background-color: var(--primary-green);
+  color: var(--light-text);
+}
+
+.button-primary:hover {
+  background-color: #267345; /* Darker shade */
+}
+
+.button-secondary {
+  background-color: transparent;
+  border: 2px solid var(--primary-green);
+  color: var(--primary-green);
+}
+
+.button-secondary:hover {
+  background-color: var(--primary-green);
+  color: var(--light-text);
+}
+
+.button-yellow {
+  background-color: var(--yellow-button);
+  color: var(--dark-text);
+}
+
+.button-yellow:hover {
+  background-color: #E6C200; /* Darker yellow */
+}
