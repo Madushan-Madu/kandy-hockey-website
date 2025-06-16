@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Gallery.css';
 
-// Import your gallery images
-import teamPhoto1 from '../assets/hockey-logo.png'; // Assuming these image files exist
+import teamPhoto1 from '../assets/hockey-logo.png';
 import teamPhoto2 from '../assets/kdha (1).jpg';
 import teamPhoto3 from '../assets/khandfc.png';
 import teamPhoto4 from '../assets/hindu.png';
-// Add more imports as needed for more images/videos
+import videoThumbnail from '../assets/hockey-goal.jpg'; // A static thumbnail image
+import testVideo from '../assets/test.mp4'; // Actual video file
 
 const galleryItems = [
   {
     src: teamPhoto1,
     alt: "Kandy District Hockey Team 2024",
     caption: "Our victorious Kandy District Hockey Team of 2024.",
-    type: "image" // Could be 'image' or 'video'
+    type: "image"
   },
   {
     src: teamPhoto2,
@@ -33,9 +33,15 @@ const galleryItems = [
     caption: "Celebrating our stars at the Annual Awards Ceremony 2023.",
     type: "image"
   },
-  // Add more items here if you have more images/videos
   {
-    src: teamPhoto1, // Re-using for demo, replace with actual new images
+    src: videoThumbnail,
+    videoUrl: testVideo,
+    alt: "Highlights Video",
+    caption: "Exciting match highlights from recent tournaments.",
+    type: "video"
+  },
+  {
+    src: teamPhoto1,
     alt: "Junior Team Practice",
     caption: "Our aspiring junior players during a practice drill.",
     type: "image"
@@ -45,11 +51,25 @@ const galleryItems = [
     alt: "Coaches Workshop",
     caption: "Coaches participating in a professional development workshop.",
     type: "image"
-  },
+  }
 ];
 
-
 const Gallery = () => {
+  const [selectedMedia, setSelectedMedia] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleMediaClick = (item) => {
+    setSelectedMedia(item);
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const handleCloseModal = () => {
+    setSelectedMedia(null);
+    setIsModalOpen(false);
+    document.body.style.overflow = 'unset';
+  };
+
   return (
     <section id="gallery" className="gallery-section">
       <div className="container">
@@ -57,16 +77,15 @@ const Gallery = () => {
         <p className="gallery-intro">
           Explore our collection of high-quality photos and videos from matches, training sessions, award ceremonies, and social events.
         </p>
-        <div className="gallery-grid"> {/* Changed class name for clarity */}
+        <div className="gallery-grid">
           {galleryItems.map((item, index) => (
-            <div className="gallery-item" key={index}>
+            <div className="gallery-item" key={index} onClick={() => handleMediaClick(item)}>
               {item.type === "image" ? (
                 <img src={item.src} alt={item.alt} className="gallery-image" />
               ) : (
-                // For videos, you'd embed a video player or a thumbnail with a play icon
                 <div className="gallery-video-thumbnail">
                   <img src={item.src} alt={item.alt} className="gallery-image" />
-                  <div className="play-button-overlay">▶</div> {/* Simple play button */}
+                  <div className="play-button-overlay">▶</div>
                 </div>
               )}
               <p className="gallery-caption">{item.caption}</p>
@@ -75,6 +94,23 @@ const Gallery = () => {
         </div>
         <p className="gallery-cta">More media coming soon!</p>
       </div>
+
+      {isModalOpen && selectedMedia && (
+        <div className="media-modal-overlay" onClick={handleCloseModal}>
+          <div className="media-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="media-modal-close" onClick={handleCloseModal}>&times;</button>
+            {selectedMedia.type === "image" ? (
+              <img src={selectedMedia.src} alt={selectedMedia.alt} className="modal-media" />
+            ) : (
+              <video controls className="modal-media">
+                <source src={selectedMedia.videoUrl} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
+            <p className="modal-media-caption">{selectedMedia.caption}</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

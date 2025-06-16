@@ -13,29 +13,31 @@
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-  gap: 25px; /* Spacing between gallery items */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 
 .gallery-item {
   background-color: var(--card-bg);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  overflow: hidden; /* Ensures rounded corners */
+  overflow: hidden;
   display: flex;
-  flex-direction: column; /* Stack image and caption */
-  transition: transform 0.2s ease-in-out; /* Optional hover effect */
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer; /* Indicate it's clickable */
 }
 
 .gallery-item:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 .gallery-image {
   width: 100%;
-  height: 200px; /* Fixed height for consistency */
-  object-fit: cover; /* Covers the area without distortion */
-  display: block; /* Removes extra space below image */
+  height: 200px;
+  object-fit: cover;
+  display: block;
 }
 
 .gallery-video-thumbnail {
@@ -45,11 +47,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000; /* Black background for video thumbnail */
+    background-color: #000;
 }
 
 .gallery-video-thumbnail .gallery-image {
-    opacity: 0.7; /* Dim image for play button */
+    opacity: 0.7;
 }
 
 .play-button-overlay {
@@ -68,12 +70,12 @@
 }
 
 .gallery-caption {
-  padding: 15px; /* Padding around the caption text */
+  padding: 15px;
   font-size: 0.95rem;
   color: var(--dark-text);
   font-weight: 500;
   text-align: center;
-  margin-top: auto; /* Pushes caption to the bottom if image size varies */
+  margin-top: auto;
   line-height: 1.4;
 }
 
@@ -82,4 +84,92 @@
   margin-top: 40px;
   font-weight: 600;
   color: var(--primary-green);
+}
+
+/* Fullscreen Media Modal Styles */
+.media-modal-overlay {
+  position: fixed; /* Stays fixed regardless of scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark, semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of everything */
+  overflow-y: auto; /* Allow scrolling if content is too tall */
+  padding: 20px; /* Padding around the content for smaller screens */
+}
+
+.media-modal-content {
+  position: relative;
+  background-color: #000; /* Content background, usually black for media */
+  padding: 0; /* No padding directly inside content */
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 90%; /* Max width of the content */
+  max-height: 90vh; /* Max height of the content, vh for viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001; /* Ensure close button is clickable */
+  padding: 0; /* Remove default button padding */
+  line-height: 1; /* Adjust line height for better centering of X */
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.media-modal-close:hover {
+  color: var(--yellow-button);
+}
+
+.modal-media {
+  max-width: 100%;
+  max-height: calc(90vh - 80px); /* Adjust height to leave space for caption and padding */
+  display: block; /* Remove extra space below image/video */
+  object-fit: contain; /* Ensures media fits within bounds without cropping */
+  border-radius: 8px; /* Match modal content border-radius */
+}
+
+.modal-media-caption {
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  padding: 0 20px 20px; /* Padding for caption */
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 768px) {
+  .media-modal-content {
+    max-width: 95%;
+    max-height: 95vh;
+  }
+  .media-modal-close {
+    font-size: 2rem;
+    top: 10px;
+    right: 10px;
+  }
+  .modal-media-caption {
+    font-size: 1rem;
+    padding: 0 15px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-media {
+    max-height: calc(90vh - 60px); /* Adjust height for smaller screens */
+  }
 }
