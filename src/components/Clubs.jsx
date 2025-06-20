@@ -21,7 +21,7 @@ const clubsData = [
   },
   {
     name: "KH & FC",
-    founded: 1975,
+    founded: 1981,
     description: "The oldest club in the district with a rich history of producing national players.",
     logo: clubLogokhandfc, 
   },
@@ -46,7 +46,7 @@ const clubsData = [
   {
     name: "Asgiriya SC",
     founded: 1995,
-    description: "A premier club known for its strong women's hockey program and multiple national team players.",
+    description: "A premier club known for its strong men's hockey program and multiple national team players.",
     logo: clubLogoasgiriya,
   },
   {
@@ -64,7 +64,7 @@ const clubsData = [
   {
     name: "Old Vidyartha HC", 
     founded: 1992,
-    description: "Leading girls' school hockey club with a focus on fundamental skill development.",
+    description: "Leading men's' school hockey club with a focus on fundamental skill development.",
     logo: clubLogovidyartha,
   },
   {

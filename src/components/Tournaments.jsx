@@ -3,7 +3,7 @@ import '../styles/Tournaments.css';
 
 const tournamentsData = [
   {
-    title: "Annual League",
+    title: "Kandy League",
     description: "The premier competition in the Kandy district hockey calendar, featuring all registered clubs competing in a league format over several months.",
     winners: [
       { year: 2023, men: "Kandy Hockey Club (Men)", women: "Kandy Ladies HC (Women)" },

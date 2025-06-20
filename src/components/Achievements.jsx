@@ -5,21 +5,21 @@ const Achievements = () => {
   const [activeCategory, setActiveCategory] = useState('men'); // 'men', 'women', 'junior'
 
   const menAchievements = [
-    { title: 'National Championship 2023', detail: 'Silver Medal' },
-    { title: 'Provincial Games 2022', detail: 'Gold Medal' },
-    { title: 'All Island Tournament 2023', detail: 'Champions' },
-    { title: 'National League 2022', detail: '3rd Place' },
+    { title: 'Junior National Championship 2024', detail: '2nd Runner up ' },
+    { title: 'Provincial Games 2024', detail: 'Silver Medal' },
+    { title: 'Provincial Games 2023', detail: 'Silver Medal' },
+    { title: 'Junior National Championship 2023', detail: 'Champions' },
   ];
 
   const womenAchievements = [
-    { title: 'National Championship 2023', detail: 'Gold Medal' },
-    { title: 'Provincial Games 2022', detail: 'Silver Medal' },
-    { title: 'All Island Tournament 2023', detail: 'Runners-up' },
+    { title: 'Womens National Championship 2024', detail: 'Champions' },
+    { title: 'Provincial Games 2024', detail: 'Silver Medal' },
+    { title: 'Junior National Championship 2024', detail: 'Runners-up' },
   ];
 
   const juniorAchievements = [
-    { title: 'U19 National Championship 2023', detail: 'Bronze Medal' },
-    { title: 'School Games 2022', detail: 'Champions' },
+    { title: 'National Cambine School Games 2024', detail: '2nd Runner up' },
+    { title: 'National Cambine School Games 2022', detail: 'Champions' },
   ];
 
   const getAchievementsForCategory = (category) => {
@@ -74,12 +74,12 @@ const Achievements = () => {
 
           {activeCategory === 'men' && (
             <p className="national-players-note">
-              **National Players:** 5 players from Kandy District were selected for the National Men's Team in 2023.
+              **National Players:** 3 players from Kandy District were selected for the Central Provice Men's Team in 2024.
             </p>
           )}
            {activeCategory === 'women' && (
             <p className="national-players-note">
-              **National Players:** 3 players from Kandy District were selected for the National Women's Team in 2023.
+              **National Players:** 3 players from Kandy District were selected for the National Women's Team in 2025.
             </p>
           )}
         </div>
